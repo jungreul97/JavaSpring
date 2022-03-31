@@ -1,0 +1,11 @@
+package com.ict.controller.di.classfile;
+
+public class PopSinger extends Singer{
+
+	@Override
+	public void sing() {
+		// TODO Auto-generated method stub
+		super.sing();
+	}
+	
+}
