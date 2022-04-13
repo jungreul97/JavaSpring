@@ -1,5 +1,6 @@
 package com.ict.persistance;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -52,11 +53,24 @@ public class BoardMapperTests {
 		// log.info(vo);
 	}
 	
-	@Test
+	//@Test
 	public void Delete() {
 		// 가져오기(글 번호는 두번째로 큰 번호로 해주세요.)
 		boardMapper.delete(5);
 		// 로그 찍기
 		// log.info(vo);
+	}
+	
+	@Test
+	public void Update() {
+		BoardVO vo = new BoardVO();
+		log.info("채워넣기 전: "+ vo);
+		
+		vo.setTitle("바뀜 입력하는 제목");
+		vo.setContent("바뀐 테스트 입력하는 본문");
+		vo.setBno(1);
+		
+		log.info("업데이트 데이터: "+vo);
+		boardMapper.update(vo);
 	}
 }

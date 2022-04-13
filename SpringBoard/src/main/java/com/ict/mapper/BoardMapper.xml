@@ -24,8 +24,16 @@
 	
 	<delete id="delete">
 	<!--  bno번 글 조회 구문 -->
-		SELECT * FROM board_tbl WHERE bno = #{bno}
+		DELETE FROM board_tbl WHERE bno = #{bno}
 	</delete>
+	
+	<update id="update">
+		UPDATE board_tbl  
+			SET 
+		title = #{title}, content = #{content}, updatedate=SYSDATE 
+			WHERE 
+		bno = #{bno}
+	</update>
 	
 	
 	

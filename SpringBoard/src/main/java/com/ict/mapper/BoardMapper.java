@@ -15,4 +15,6 @@ public interface BoardMapper {
 	public BoardVO select(long bno);
 	
 	public void delete(long bno);
+	
+	public void update(BoardVO vo);
 }
