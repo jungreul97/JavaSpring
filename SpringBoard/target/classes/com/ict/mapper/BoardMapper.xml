@@ -4,15 +4,31 @@
 <!-- 위쪽에는 마이바티스에서 사용할 xml파일임을 명시
 아래쪽 mapper 태그의 namespace에 어떤 인터페이스와 연동할지 패키지부터 다 적음 -->
 <mapper namespace="com.ict.mapper.BoardMapper">
-	<select id="getList" resultType="com.ict.vo.BoardVO">
+	<select id="getList" resultType="com.ict.domain.BoardVO">
 		<![CDATA[
-			SELECT * FROM board_tbl WHERE bno < 4
+			SELECT * FROM board_tbl ORDER BY bno DESC
 		]]>
 	</select>
 	
+	<!--  insert 구문이므로 insert태그를 써야 하고 리턴자료가 없으니 자연히 resultType도 작성 안합니다. -->
+	<!--  BoardVO를 입력받지만 #{}내부에는 vo.변수명이 아닌 그냥 변수명을 그대로 써주시면 됩니다. -->
 	<insert id="insert">
 		INSERT INTO board_tbl (bno,title,content,writer) VALUES 
-		(board_num.nexstval,#{title},#{content},#{wrtier})
+		(board_num.nextval, #{title}, #{content}, #{writer})
 	</insert>
+	
+	<select id="select" resultType="com.ict.domain.BoardVO">
+	<!--  bno번 글 조회 구문 -->
+		SELECT * FROM board_tbl WHERE bno = #{bno}
+	</select>
+	
+	<delete id="delete">
+	<!--  bno번 글 조회 구문 -->
+		SELECT * FROM board_tbl WHERE bno = #{bno}
+	</delete>
+	
+	
+	
+	
 	
 </mapper>	
