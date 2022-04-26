@@ -2,12 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.m2e.core.pom.overview">
 		<list key="ciManagementUrl">
+			<item value="https://travis-ci.org/mybatis/mybatis-3/"/>
 		</list>
 		<list key="ciManagementSystem">
+			<item value="Travis CI"/>
 		</list>
 		<list key="issueManagementSystem">
+			<item value="GitHub Issue Management"/>
 		</list>
 		<list key="issueManagementUrl">
+			<item value="https://github.com/mybatis/mybatis-3/issues"/>
 		</list>
 	</section>
 	<section name="org.eclipse.m2e.core.pom.dependencies">
